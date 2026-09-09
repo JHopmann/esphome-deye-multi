@@ -37,7 +37,7 @@ There are different versions on the market, a 5 volt and a 3.3 volt version. Imp
 
 I would recommend one of these MAX3485 (the 3 stands for 3.3 volt-version):
 
-![Dashboard Screenshot](./docs/images/Max3485_m.jpg)
+<img src="./docs/images/Max3485_m.jpg" alt="Several MAX3485" width="500" />
 
 The left one is a board with automatic flow control. You do not need to specify the flow control-pin in the config, and you do not need to connect it to any ESP32-GPIO.
 From my experience, the pricing is (nearly) the same. 
