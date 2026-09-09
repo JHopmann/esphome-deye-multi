@@ -32,16 +32,38 @@ Depending on your preferences and the availability you can install the project o
 
 *** Recommendation: Use a dual core ESP32 as the connection to multiple modbus and sending the data via WIFI can create load on your chip.
 
-The modbus-connectivity is done with a chip called MAX485, a cheap and small chip dedicated forRS485-protocol.
-There are different versions on the market, a 5 volt and a 3.3 volt version. Important to consider that your ESP32 runs on 3.3 volt and cannot handle signals from the 5 volt MAX485. In the 5 volt version you have to implement a voltage-divider.
+You can find an overview at https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/hw-reference/chip-series-comparison.html
+I used for my test an ESP32-WROOM-32U which is a "Xtensa® dual-core 32-bit LX6" w. external antenna.
+
+<img src="./docs/images/ESP32complete.jpg" alt="Complete board" width="300" />
+
+The modbus-connectivity is done with a chip called MAX485, a cheap and small chip dedicated for RS485-protocol.
+There are other products on the market (SN75176B from Texas Instruments or SP3485 from MaxLinear)
+There are different versions of the MAX485 on the market, a 5 volt and a 3.3 volt version. 
+Important to consider that your ESP32 runs on 3.3 volt and cannot handle signals from the 5 volt MAX485. 
+If you ONLY send data from the ESP to the chip, fine, in the 5 volt version you have to implement a voltage-divider when the chip is sending to the ESP.
 
 I would recommend one of these MAX3485 (the 3 stands for 3.3 volt-version):
 
 <img src="./docs/images/Max3485_m.jpg" alt="Several MAX3485" width="500" />
 
 The left one is a board with automatic flow control. You do not need to specify the flow control-pin in the config, and you do not need to connect it to any ESP32-GPIO.
-From my experience, the pricing is (nearly) the same. 
+From my experience, the pricing is (nearly) the same. (Aliexpress 55 baht = 1.5$)
 
+<img src="./docs/images/Max3485_m.jpg" alt="Several MAX3485" width="300" />
+
+As you can see here, you only need to connect A, B and Ground (GMD) and you are done.
+Power supply 3.3 volt is provided by the ESP32-board.
+
+<img src="./docs/images/Max3485_noflow.jpg" alt="MAX3485 w. automatic flow control" width="250" />
+
+For the connectivity I used the meter-port on my DEYE Inverter. 
+The cable can be any normal Cat5e. Mine is cut into half and the color of the cale was determined from the transparent plug.
+
+The DEYE documentation states that the pins 4&5 are used on the meter-port different compared to the RS485-Port. 
+I have seen statements the meter-port does not deliver data. Well, mine is! But please check your documentation and test. (Feedback welcome!)
+
+<img src="./docs/images/DEYEdoc.jpg" alt="DEYE documentation" width="250" />
 
 ## 📚 Documentation
 
