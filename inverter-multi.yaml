@@ -19,6 +19,8 @@ substitutions:
   ota_password: !secret pv_inverter_ota_password
   fallback_password: !secret pv_inverter_fallback_password
   
+  modbus_inverter_address: "0x01" # Default Modbus address, should be changed to match inverter settings
+
   # Safe Mode parameters for supported inverters
   safe_mode_delay: 600s # Time after which transition to safe mode and setting default operating parameters will occur
   default_maximum_battery_charge_current: "140" # Amps
@@ -37,65 +39,70 @@ substitutions:
 ###########################################
 
 packages:
+    # 1. MASTER-INVERTER
+    deye_master:
+      url: https://github.com/JHopmann/esphome-deye-inverter
+      refresh: 12h
+      files:
+        - path: pv-inverter.Deye-SG0XLP1.yaml
+          vars:
+            name: "deye-master"
+            
+            friendly_name: "Deye Master"
+            modbus_controller_id: "deye_master"
+            modbus_hub_id: "modbus_1"
+            uart_hub_id_1: "modbus_uart_1"
+            uart_hub_id_2: "modbus_uart_2"
+            prefix: "master_"
+            nameprefix: "Master "
+        - path: pv_inverter/packages/deye_hybrid_1p/modbus_master.yaml
+          vars:
+            # Here you have to set your specific GPIOs where your modbus is connected
+            uart_tx_pin_master: "GPIO26"
+            uart_rx_pin_master: "GPIO35"
+            uart_tx_pin_slave: "GPIO17"
+            uart_rx_pin_slave: "GPIO04"
+            # The flow-control is optional, depending if you have a board which has automatic control
+            uart_flow_control_pin_master: "GPIO25"
+            uart_flow_control_pin_slave: "GPIO16"
+            
+    # 2. SLAVE-INVERTER
+    deye_slave:
+      url: https://github.com/JHopmann/esphome-deye-inverter
   
-#  1. MASTER-INVERTER:
-   refresh: 12h
-   files:
-     - path: pv-inverter.Deye-SG0XLP1.yaml
-       vars:
-         name: "deye-master"
-         friendly_name: "Deye Master"
-         modbus_controller_id: "deye_master"
-         modbus_hub_id_1: "modbus_1"
-         uart_hub_id_1: "modbus_uart_1"
-         modbus_hub_id_2: "modbus_2"
-         uart_hub_id_2: "modbus_uart_2"
-         prefix: "master_"
-         nameprefix: "Master "
-     - path: pv_inverter/packages/deye_hybrid_1p/modbus_master.yaml
-       vars:
-         # Hier steuerst du deine Pins für den Slave-Bus:
-         uart_tx_pin_master: "GPIO26"
-         uart_rx_pin_master: "GPIO35"
-         uart_tx_pin_slave: "GPIO17"
-         uart_rx_pin_slave: "GPIO04"
-         uart_flow_control_pin_master: "GPIO25"
-         uart_flow_control_pin_slave: "GPIO16"
-		 
- # 2. SLAVE-INVERTER
- deye_slave:
-   refresh: 12h
-   files:
-     - path: pv-inverter.Deye-SG0XLP1.yaml
-       vars:
-         name: "deye-slave"
-         friendly_name: "Deye Slave"
-         modbus_controller_id: "deye_slave_controller"
-         prefix: "slave_"
-         nameprefix: "Slave "
-     - path: pv_inverter/packages/deye_hybrid_1p/modbus_slave.yaml
+      refresh: 12h
+      files:
+        - path: pv-inverter.Deye-SG0XLP1-multi.yaml
+          vars:
+            name: "deye-slave"
+            friendly_name: "Deye Slave"
+            modbus_controller_id: "deye_slave"
+            modbus_hub_id: "modbus_2"
+            prefix: "slave_"
+            nameprefix: "Slave "
+        - path: pv_inverter/packages/deye_hybrid_1p/modbus_slave.yaml
 
-#   # 1. SINGLE-INVERTER
-#   deye_slave:
-#     refresh: 12h
-#     files:
-#       - path: pv-inverter.Deye-SG0XLP1.yaml
-#         vars:
-#           name: "deye-inverter"
-#           friendly_name: "Deye Inverter"
-#           modbus_controller_id: "deye_controller"
-#           modbus_hub_id_1: "modbus_1"
-#           uart_hub_id_1: "modbus_uart_1"
-#           modbus_hub_id_2: "modbus_2"
-#           uart_hub_id_2: "modbus_uart_2"
-#           prefix: ""
-#           nameprefix: ""
-#       - path: pv_inverter/packages/deye_hybrid_1p/modbus_master.yaml
-#         vars:
-#           # Hier steuerst du deine Pins für den Slave-Bus:
-#           uart_tx_pin_master: "GPIO26"
-#           uart_rx_pin_master: "GPIO35"
-#           uart_flow_control_pin_master: "GPIO25"
+  # 1. SINGLE-INVERTER
+#  deye_slave:
+#    refresh: 12h
+#    files:
+#      - path: pv-inverter.Deye-SG0XLP1.yaml
+#        vars:
+#          name: "deye-inverter"
+#          friendly_name: "Deye Inverter"
+#          modbus_controller_id: "deye_controller"
+#          modbus_hub_id_1: "modbus_1"
+#          uart_hub_id_1: "modbus_uart_1"
+#          modbus_hub_id_2: "modbus_2"
+#          uart_hub_id_2: "modbus_uart_2"
+#          prefix: ""
+#          nameprefix: ""
+#      - path: pv_inverter/packages/deye_hybrid_1p/modbus_master.yaml
+#        vars:
+#          # Hier steuerst du deine Pins für den Slave-Bus:
+#          uart_tx_pin_master: "GPIO26"
+#          uart_rx_pin_master: "GPIO35"
+#          uart_flow_control_pin_master: "GPIO25"
 
 # Set appropriately if using a different board. https://esphome.io/components/#supported-microcontrollers
 esp32:
@@ -103,6 +110,9 @@ esp32:
   framework:
     type: esp-idf
 
-
-#logger:
-#  level: VERBOSE # VERBOSE / DEBUG / INFO / WARN
+# logger:
+#   level: VERBOSE
+#   initial_level: ERROR
+#   logs:
+#     wifi: VERBOSE
+#  see https://esphome.io/components/logger/ for more information about logging
