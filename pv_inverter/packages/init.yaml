@@ -15,7 +15,7 @@
 # limitations under the License.
 
 substitutions:
-  update_interval: 5s
+  update_interval: 10s
   name: "deye-inverter"
   friendly_name: "Deye Inverter"
   modbus_hub_id_1: "modbus_1"    # Default Master
