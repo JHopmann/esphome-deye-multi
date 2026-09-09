@@ -9,7 +9,6 @@
 | `name` | Device name in ESPHome | depends on inverter type | No |
 | `friendly_name` | Friendly device name | depends on inverter type | No |
 | `device_description` | Device description | depends on inverter type | No |
-| `modbus_controller_id` | Modbus controller ID | depends on inverter type | No |
 | `baud_rate` | Baud rate for Modbus communication | `9600` | No |
 | `update_interval` | How often sensor values are updated from inverter | 5s | No |
 

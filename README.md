@@ -26,6 +26,23 @@ An ESPHome-based solution for monitoring and controlling Deye photovoltaic inver
 For an excellent overview of the features and installation watch the video from the author of the original project (Lewa-Reka)
 Installation & Presentation: https://youtu.be/iJjsA_MzmnE 
 
+## Hardware
+
+Depending on your preferences and the availability you can install the project on your ESP-Board of your choice.
+
+*** Recommendation: Use a dual core ESP32 as the connection to multiple modbus and sending the data via WIFI can create load on your chip.
+
+The modbus-connectivity is done with a chip called MAX485, a cheap and small chip dedicated forRS485-protocol.
+There are different versions on the market, a 5 volt and a 3.3 volt version. Important to consider that your ESP32 runs on 3.3 volt and cannot handle signals from the 5 volt MAX485. In the 5 volt version you have to implement a voltage-divider.
+
+I would recommend one of these MAX3485 (the 3 stands for 3.3 volt-version):
+
+![Dashboard Screenshot](./docs/images/Max3485_m.jpg)
+
+The left one is a board with automatic flow control. You do not need to specify the flow control-pin in the config, and you do not need to connect it to any ESP32-GPIO.
+From my experience, the pricing is (nearly) the same. 
+
+
 ## 📚 Documentation
 
 - **[Supported Devices](docs/SUPPORTED_DEVICES.md)**: List of supported inverters and specific configurations.

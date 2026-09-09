@@ -40,21 +40,6 @@ substitutions:
 
   pv_inverter_api_key: "" 
 
-packages:
-  inverter_logic:
-    url: https://github.com/JHopmann/esphome-deye-inverter
-    refresh: 0s
-    
-    files:
-      - path: pv_inverter/deye_hybrid_1p_lv.yaml
-        vars:
-          name: ${name}
-          friendly_name: ${friendly_name}
-          modbus_controller_id: ${modbus_controller_id}
-          modbus_hub_id: ${modbus_hub_id}
-          uart_hub_id: ${uart_hub_id}
-          prefix: ${prefix}
-
 # Set appropriately if using a different board. https://esphome.io/components/#supported-microcontrollers
 esp32:
   board: esp32dev
