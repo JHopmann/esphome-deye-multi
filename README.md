@@ -32,7 +32,9 @@ Depending on your preferences and the availability you can install the project o
 
 *** Recommendation: Use a dual core ESP32 as the connection to multiple modbus and sending the data via WIFI can create load on your chip.
 
-You can find an overview at https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/hw-reference/chip-series-comparison.html
+You can find an overview at 
+ https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/hw-reference/chip-series-comparison.html
+
 I used for my test an ESP32-WROOM-32U which is a "Xtensa® dual-core 32-bit LX6" w. external antenna.
 
 <img src="./docs/images/ESP32complete.jpg" alt="Complete board" width="300" />
@@ -50,7 +52,7 @@ From my experience, the pricing is (nearly) the same. (Aliexpress 55 baht = 1.5$
 
 <img src="./docs/images/Max3485_m.jpg" alt="Several MAX3485" width="300" />
 
-As you can see here, you only need to connect A, B and Ground (GMD) and you are done.
+As you can see here, you only need to connect A, B and Ground (GND) and you are done.
 Power supply 3.3 volt is provided by the ESP32-board.
 
 <img src="./docs/images/Max3485_noflow.jpg" alt="MAX3485 w. automatic flow control" width="250" />
