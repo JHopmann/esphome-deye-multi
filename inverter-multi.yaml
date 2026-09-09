@@ -36,6 +36,14 @@ substitutions:
 # one or multiple inverters to your ESP   #
 ###########################################
 
+esphome:
+  name: "deye-inverter"
+  friendly_name: "DEYE Multiple Inverter"
+  comment: "${device_description} by JHopmann https://github.com/JHopmann/esphome-deye-multi/"
+  project:
+    name: "JHopmann.deye-inverter-multi"
+    version: "0.1.3"
+
 packages:
     # 1. MASTER-INVERTER
     deye_master:
@@ -45,7 +53,6 @@ packages:
         - path: pv-inverter.Deye-SG0XLP1.yaml
           vars:
             name: "deye-master"
-            
             friendly_name: "Deye Master"
             modbus_controller_id: "deye_master"
             modbus_hub_id: "modbus_1"
@@ -66,7 +73,7 @@ packages:
             
     # 2. SLAVE-INVERTER
     deye_slave:
-      url: https://github.com/JHopmann/esphome-deye-inverter
+      url: https://github.com/JHopmann/esphome-deye-multi
   
       refresh: 12h
       files:
