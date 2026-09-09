@@ -97,8 +97,8 @@ binary_sensor:
     device_class: running
     icon: "mdi:power"
     filters:
-      - multiply: 1
-        timeout: 30s          # Wartezeit, nach der der letzte Wert behalten wird 
+      - multiply: 1.0
+        timeout: 30s          # Waiting time before change value
         value: last 
 
 switch:
