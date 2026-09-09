@@ -29,23 +29,6 @@ This project automatically integrates with Home Assistant through the ESPHome AP
 - **Generator**: Control and monitoring (if connected)
 - **Time Synchronization** (3P only): Automatic and Manual time sync. Button available in Home Assistant
 
-### Time of Use "All" Entities
-The system includes convenient "All" entities that allow you to control all Time of Use windows simultaneously:
-
-#### For Deye Inverters:
-- **Time of Use All SoC**: Set battery charge level for all 6 windows at once
-- **Time of Use All Out Power**: Set output power limit for all 6 windows at once  
-- **Time of Use All Voltage**: Set voltage threshold for all 6 windows at once
-- **Time of Use All Grid Charge**: Enable/disable grid charging for all 6 windows at once
-- **Time of Use All Gen (currently only 3P)**: Enable/disable generator charging for all 6 windows at once
-- **Time of Use All Sell (currently only 3P and probably only working properly with HV)**: Enable/disable selling for all 6 windows at once
-
-**Important Notes:**
-- These entities are **disabled by default** and must be enabled in Home Assistant to use them
-- When you change a value on any "All" entity, it automatically applies the same setting to all 6 Time of Use windows
-- These entities are particularly useful for automations where you want to control all Time of Use windows simultaneously
-- The "All" entities read their current state from the first Time of Use window (e.g., "Time of Use 1 SoC")
-
 ## 🔒 Safety Features
 
 The system includes comprehensive safety mechanisms:

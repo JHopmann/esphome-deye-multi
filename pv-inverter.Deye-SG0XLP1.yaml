@@ -30,7 +30,6 @@ substitutions:
   name: "deye-inverter"
   friendly_name: "Deye Inverter"
   modbus_controller_id: "deye_modbus_controller"
-  modbus_inverter_address: "0x01"
   modbus_hub_id: "modbus_1"
   uart_hub_id: "modbus_uart_1"
   prefix: ""
@@ -52,7 +51,6 @@ packages:
           name: ${name}
           friendly_name: ${friendly_name}
           modbus_controller_id: ${modbus_controller_id}
-          modbus_inverter_address: ${modbus_inverter_address}
           modbus_hub_id: ${modbus_hub_id}
           uart_hub_id: ${uart_hub_id}
           prefix: ${prefix}

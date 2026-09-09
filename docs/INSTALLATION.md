@@ -21,9 +21,7 @@ GND         -> GND             -> GND (Modbus)
 
 **Note**: Some RS485 converters may require a flow control pin. Uncomment and configure the `flow_control_pin` in the main configuration if needed.
 
-## ⚙️ Installation
-
-### Method 1: Home Assistant ESPHome Add-on (Recommended)
+## ⚙️ Installation on Home Assistant ESPHome Add-on
 
 This is the easiest way to get started if you're using Home Assistant.
 
@@ -57,7 +55,7 @@ This is the easiest way to get started if you're using Home Assistant.
    pv_inverter_fallback_password: "your-fallback-password"
    ```
 2. Click **"EDIT"** on your newly created device
-3. **Replace the entire content** with the configuration from [`pv-inverter.yaml`](../pv-inverter.yaml)
+3. **Replace the entire content** with the configuration from [`inverter-multi.yaml`](../pv-inverter.yaml)
 4. Click **"SAVE"** and then **"INSTALL"**
 
 #### Step 4: Flash to ESP32
@@ -73,30 +71,3 @@ This is the easiest way to get started if you're using Home Assistant.
 3. Power up the ESP32 (via USB power adapter or external power)
 4. The device should appear in Home Assistant automatically under **Settings** → **Devices & Services** → **ESPHome**
 
-### Method 2: ESPHome CLI
-
-If you prefer using command line or don't have Home Assistant:
-
-1. **Install ESPHome CLI**:
-   ```bash
-   pip install esphome
-   ```
-
-2. **Download Configuration**:
-   ```bash
-   wget https://raw.githubusercontent.com/Lewa-Reka/esphome-deye-inverter/main/pv-inverter.yaml
-   ```
-
-3. **Create secrets.yaml**:
-   ```yaml
-   wifi_ssid: "YourWiFiSSID"
-   wifi_password: "YourWiFiPassword"
-   pv_inverter_api_key: "your-32-character-api-key"
-   pv_inverter_ota_password: "your-ota-password"
-   pv_inverter_fallback_password: "your-fallback-password"
-   ```
-
-4. **Flash to ESP**:
-   ```bash
-   esphome run pv-inverter.yaml
-   ```

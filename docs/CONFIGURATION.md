@@ -2,7 +2,7 @@
 
 ## 🔧 Configuration Options
 
-### Main Configuration (`pv-inverter.yaml`)
+### Main Configuration (`pinverter-multi.yaml`)
 
 | Parameter | Description | Default | Required |
 |-----------|-------------|---------|----------|
@@ -10,7 +10,6 @@
 | `friendly_name` | Friendly device name | depends on inverter type | No |
 | `device_description` | Device description | depends on inverter type | No |
 | `modbus_controller_id` | Modbus controller ID | depends on inverter type | No |
-| `modbus_inverter_address` | Modbus address of your inverter | `0x01` | No |
 | `baud_rate` | Baud rate for Modbus communication | `9600` | No |
 | `update_interval` | How often sensor values are updated from inverter | 5s | No |
 

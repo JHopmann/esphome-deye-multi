@@ -4,9 +4,9 @@
 
 1. **No Communication with Inverter**:
    - Check RS485 wiring (A+/B- connections)
-   - Verify Modbus address matches inverter settings
+   - Verify GPIO-settings are matching your hardware
+   - Verify your flow control is en/disabled and the pin-configuration is matching your hardware
    - Ensure correct baud rate (9600 default)
-   - Check `modbus_inverter_address` in configuration
 
 2. **WiFi Connection Issues**:
    - Verify SSID and password in configuration
@@ -28,8 +28,8 @@
 
 ## Debug Mode
 
-Enable verbose logging by uncommenting in `pv_inverter.yaml`:
-```yaml
+Enable verbose logging by uncommenting in `inverter-multi.yaml`:
+
 logger:
   level: VERBOSE
 ```
