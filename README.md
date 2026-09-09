@@ -58,7 +58,7 @@ Power supply 3.3 volt is provided by the ESP32-board.
 For the connectivity I used the meter-port on my DEYE Inverter. 
 The cable can be any normal Cat5e. Mine is cut into half and the color of the wires was determined from the TRANSPARENT plug. 
 
-$${\color{red}!!! Be careful not to use the wrong wires as it can damage your RS485-chip OR EVEN WORSE your inverter !!!}$$
+$${\color{red}!!! Be\ careful\  not\ to\ use\ the\ wrong\ wires\ as\ it\ can\ damage\ your\ RS485-chip\ OR\ EVEN\ WORSE\ your\ inverter\ !!!}$$
 
 The DEYE documentation states that the pins 4&5 are used on the meter-port different compared to the RS485-Port. 
 I have seen statements the meter-port does not deliver data. Well, mine is! But please check your documentation and test. (Feedback welcome!)
