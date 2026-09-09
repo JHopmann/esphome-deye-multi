@@ -97,9 +97,8 @@ binary_sensor:
     device_class: running
     icon: "mdi:power"
     filters:
-      - multiply: 1.0
-        timeout: 30s          # Waiting time before change value
-        value: last 
+      timeout: 30s          # Waiting time before change value
+      value: last 
 
 switch:
   - platform: modbus_controller
