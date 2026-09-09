@@ -43,9 +43,7 @@ There are different versions of the MAX485 on the market, a 5 volt and a 3.3 vol
 Important to consider that your ESP32 runs on 3.3 volt and cannot handle signals from the 5 volt MAX485. 
 If you ONLY send data from the ESP to the chip, fine, in the 5 volt version you have to implement a voltage-divider when the chip is sending to the ESP.
 
-I would recommend one of these MAX3485 (the 3 stands for 3.3 volt-version):
-
-<img src="./docs/images/Max3485_m.jpg" alt="Several MAX3485" width="500" />
+I would recommend one of these MAX3485 (the 3 stands for 3.3 volt-version).
 
 The left one is a board with automatic flow control. You do not need to specify the flow control-pin in the config, and you do not need to connect it to any ESP32-GPIO.
 From my experience, the pricing is (nearly) the same. (Aliexpress 55 baht = 1.5$)
@@ -58,7 +56,9 @@ Power supply 3.3 volt is provided by the ESP32-board.
 <img src="./docs/images/Max3485_noflow.jpg" alt="MAX3485 w. automatic flow control" width="250" />
 
 For the connectivity I used the meter-port on my DEYE Inverter. 
-The cable can be any normal Cat5e. Mine is cut into half and the color of the cale was determined from the transparent plug.
+The cable can be any normal Cat5e. Mine is cut into half and the color of the wires was determined from the TRANSPARENT plug. 
+
+$${\color{red}!!! Be careful not to use the wrong wires as it can damage your RS485-chip OR EVEN WORSE your inverter !!!}$$
 
 The DEYE documentation states that the pins 4&5 are used on the meter-port different compared to the RS485-Port. 
 I have seen statements the meter-port does not deliver data. Well, mine is! But please check your documentation and test. (Feedback welcome!)
