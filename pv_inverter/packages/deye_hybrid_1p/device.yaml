@@ -97,8 +97,7 @@ binary_sensor:
     device_class: running
     icon: "mdi:power"
     filters:
-        - filter: timeout
-          timeout: 30s
+        - timeout: 30s
           value: last
 
 switch:
