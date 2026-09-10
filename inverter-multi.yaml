@@ -54,6 +54,7 @@ packages:
             uart_hub_id_2: "modbus_uart_2"
             prefix: "master_"
             nameprefix: "Master "
+			device_id: "master_device"
         - path: pv_inverter/packages/deye_hybrid_1p/modbus_master.yaml
           vars:
 			# We define two devices
@@ -82,6 +83,7 @@ packages:
             modbus_hub_id: "modbus_2"
             prefix: "slave_"
             nameprefix: "Slave "
+            device_id: "slave_device"
         - path: pv_inverter/packages/deye_hybrid_1p/modbus_slave.yaml
 
   # 1. SINGLE-INVERTER
