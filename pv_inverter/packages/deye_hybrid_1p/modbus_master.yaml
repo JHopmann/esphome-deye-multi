@@ -32,9 +32,9 @@ esphome:
     name: "JHopmann.deye-inverter-multi"
     version: "0.1.3"
   devices:
-    - id: master_device
+    - id: ${master_device_id}
       name: master_device
-    - id: slave_device
+    - id: ${slave_device_id}
       name: slave_device
 
 modbus:

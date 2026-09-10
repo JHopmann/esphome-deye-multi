@@ -56,6 +56,9 @@ packages:
             nameprefix: "Master "
         - path: pv_inverter/packages/deye_hybrid_1p/modbus_master.yaml
           vars:
+			# We define two devices
+			master_device_id: "master_device"
+			slave_device_id: "slave_device"
             # Here you have to set your specific GPIOs where your modbus is connected
             uart_tx_pin_master: "GPIO26"
             uart_rx_pin_master: "GPIO35"
