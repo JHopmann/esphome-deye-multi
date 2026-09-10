@@ -17,6 +17,7 @@
 substitutions:
   update_interval: 10s
   name: "deye-inverter"
+  hostname: ${name}
   friendly_name: "Deye Inverter"
   modbus_hub_id_1: "modbus_1"    # Default Master
   modbus_hub_id_2: "modbus_2"    # Default Slave
@@ -25,13 +26,13 @@ substitutions:
   nameprefix: ""   # No Prefix (Single-Inverter)
   prefix: ""       # No Prefix (Single-Inverter)
 
-  esphome:
-    name: "deye-inverter"
-    friendly_name: "DEYE Multiple Inverter"
-    comment: "${device_description} by JHopmann https://github.com/JHopmann/esphome-deye-multi/"
-    project:
-      name: "JHopmann.deye-inverter-multi"
-      version: "0.1.3"
+esphome:
+  name: "deye-inverter"
+  friendly_name: "DEYE Multiple Inverter"
+  comment: "${device_description} by JHopmann https://github.com/JHopmann/esphome-deye-multi/"
+  project:
+    name: "JHopmann.deye-inverter-multi"
+    version: "0.1.3"
 
 logger:
   level: WARN
@@ -54,7 +55,7 @@ api:
 wifi:
   ssid: ${wifi_ssid}
   password: ${wifi_password}
-
+  use_address: ${hostname}
   ap:
     ssid: "${friendly_name} Fallback Hotspot"
     password: ${fallback_password}
