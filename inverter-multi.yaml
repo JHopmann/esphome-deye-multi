@@ -71,7 +71,7 @@ packages:
   
       refresh: 12h
       files:
-        - path: pv-inverter.Deye-SG0XLP1-multi.yaml
+        - path: pv-inverter.Deye-SG0XLP1.yaml
           vars:
             name: "deye-slave"
             friendly_name: "Deye Slave"
