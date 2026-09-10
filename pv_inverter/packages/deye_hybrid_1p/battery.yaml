@@ -450,7 +450,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Battery Shutdown Voltage"
     device_id: ${device_id}
-   address: 220
+    address: 220
     unit_of_measurement: "V"
     device_class: voltage
     value_type: U_WORD
