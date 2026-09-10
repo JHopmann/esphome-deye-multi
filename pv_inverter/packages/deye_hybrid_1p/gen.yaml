@@ -110,6 +110,7 @@ select:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator Port Use"
+    device_id: ${device_id}
     address: 235
     value_type: U_WORD
     entity_category: config

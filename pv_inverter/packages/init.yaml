@@ -75,19 +75,6 @@ debug:
   update_interval: 60s
 
 sensor:
-  - platform: wifi_signal
-    name: "${nameprefix}ESP WiFi Signal"
-    id: "${prefix}esp_wifi_signal"
-    icon: mdi:wifi
-    update_interval: 60s
-    entity_category: diagnostic
-  - platform: uptime
-    name: "${nameprefix}ESP Uptime"
-    id: "${prefix}esp_uptime"
-    type: seconds
-    icon: mdi:timer-check
-    update_interval: 60s
-    entity_category: diagnostic
   - platform: debug
     free:
       name: "${nameprefix}ESP Heap Free"
