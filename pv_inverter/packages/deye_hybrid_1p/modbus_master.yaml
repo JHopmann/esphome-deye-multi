@@ -33,9 +33,9 @@ esphome:
     version: "0.1.3"
   devices:
 	- id: master_device
-	  name: master_device
-	- id: slave_device
-	  name: slave_device
+      name: master_device
+    - id: slave_device
+      name: slave_device
 
 modbus:
   - id: modbus_1
