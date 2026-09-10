@@ -79,7 +79,6 @@ sensor:
       icon: mdi:timer-check
       update_interval: 60s
       entity_category: diagnostic
-      sensor:
     - platform: debug
       free:
         name: "ESP Heap Free"
