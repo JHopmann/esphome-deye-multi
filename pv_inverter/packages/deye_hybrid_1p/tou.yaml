@@ -34,6 +34,7 @@ datetime:
     id: "${prefix}time_of_use_1_start"
     type: time
     update_interval: 15s
+    device_id: ${device_id}
     lambda: |-
       auto raw = id(${prefix}time_of_use_1_start_raw).state;
       ${func_int_to_time}
@@ -45,6 +46,7 @@ datetime:
   - platform: template
     name: "${nameprefix}Time of Use 2 Start"
     id: "${prefix}time_of_use_2_start"
+    device_id: ${device_id}
     type: time
     update_interval: 15s
     lambda: |-
@@ -58,6 +60,7 @@ datetime:
   - platform: template
     name: "${nameprefix}Time of Use 3 Start"
     id: "${prefix}time_of_use_3_start"
+    device_id: ${device_id}
     type: time
     update_interval: 15s
     lambda: |-
@@ -71,6 +74,7 @@ datetime:
   - platform: template
     name: "${nameprefix}Time of Use 4 Start"
     id: "${prefix}time_of_use_4_start"
+    device_id: ${device_id}
     type: time
     update_interval: 15s
     lambda: |-
@@ -84,6 +88,7 @@ datetime:
   - platform: template
     name: "${nameprefix}Time of Use 5 Start"
     id: "${prefix}time_of_use_5_start"
+    device_id: ${device_id}
     type: time
     update_interval: 15s
     lambda: |-
@@ -97,6 +102,7 @@ datetime:
   - platform: template
     name: "${nameprefix}Time of Use 6 Start"
     id: "${prefix}time_of_use_6_start"
+    device_id: ${device_id}
     type: time
     update_interval: 15s
     lambda: |-
@@ -113,6 +119,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use"
     id: "${prefix}switch_time_of_use"
+    device_id: ${device_id}
     register_type: holding
     address: 248
     bitmask: 1
@@ -123,6 +130,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 1 Charge Enable"
     id: "${prefix}switch_time_point_1_charge_enable"
+    device_id: ${device_id}
     register_type: holding
     address: 274
     bitmask: 1
@@ -133,6 +141,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 2 Charge Enable"
     id: "${prefix}switch_time_point_2_charge_enable"
+    device_id: ${device_id}
     register_type: holding
     address: 275
     bitmask: 1
@@ -143,6 +152,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 3 Charge Enable"
     id: "${prefix}switch_time_point_3_charge_enable"
+    device_id: ${device_id}
     register_type: holding
     address: 276
     bitmask: 1
@@ -153,6 +163,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 4 Charge Enable"
     id: "${prefix}switch_time_point_4_charge_enable"
+    device_id: ${device_id}
     register_type: holding
     address: 277
     bitmask: 1
@@ -163,6 +174,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 5 Charge Enable"
     id: "${prefix}switch_time_point_5_charge_enable"
+    device_id: ${device_id}
     register_type: holding
     address: 278
     bitmask: 1
@@ -173,6 +185,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 6 Charge Enable"
     id: "${prefix}switch_time_point_6_charge_enable"
+    device_id: ${device_id}
     register_type: holding
     address: 279
     bitmask: 1
@@ -181,6 +194,7 @@ switch:
   - platform: template
     name: "${nameprefix}Time of Use All Charge Enable"
     id: "${prefix}switch_time_of_use_all_charge_enable"
+    device_id: ${device_id}
     icon: "mdi:battery-plus"
     optimistic: true
     restore_mode: DISABLED
@@ -219,6 +233,7 @@ number:
     use_write_multiple: true
     name: "${nameprefix}Time of Use 1 Start Raw"
     id: "${prefix}time_of_use_1_start_raw"
+    device_id: ${device_id}
     modbus_controller_id: ${modbus_controller_id}
     register_type: holding
     address: 250
@@ -231,6 +246,7 @@ number:
     use_write_multiple: true
     name: "${nameprefix}Time of Use 2 Start Raw"
     id: "${prefix}time_of_use_2_start_raw"
+    device_id: ${device_id}
     modbus_controller_id: ${modbus_controller_id}
     register_type: holding
     address: 251
@@ -243,6 +259,7 @@ number:
     use_write_multiple: true
     name: "${nameprefix}Time of Use 3 Start Raw"
     id: "${prefix}time_of_use_3_start_raw"
+    device_id: ${device_id}
     modbus_controller_id: ${modbus_controller_id}
     register_type: holding
     address: 252
@@ -255,6 +272,7 @@ number:
     use_write_multiple: true
     name: "${nameprefix}Time of Use 4 Start Raw"
     id: "${prefix}time_of_use_4_start_raw"
+    device_id: ${device_id}
     modbus_controller_id: ${modbus_controller_id}
     register_type: holding
     address: 253
@@ -267,6 +285,7 @@ number:
     use_write_multiple: true
     name: "${nameprefix}Time of Use 5 Start Raw"
     id: "${prefix}time_of_use_5_start_raw"
+    device_id: ${device_id}
     modbus_controller_id: ${modbus_controller_id}
     register_type: holding
     address: 254
@@ -279,6 +298,7 @@ number:
     use_write_multiple: true
     name: "${nameprefix}Time of Use 6 Start Raw"
     id: "${prefix}time_of_use_6_start_raw"
+    device_id: ${device_id}
     modbus_controller_id: ${modbus_controller_id}
     register_type: holding
     address: 255
@@ -292,6 +312,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 1 Voltage"
     id: "${prefix}time_of_use_1_voltage"
+    device_id: ${device_id}
     register_type: holding
     address: 262
     unit_of_measurement: "V"
@@ -309,6 +330,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 2 Voltage"
     id: "${prefix}time_of_use_2_voltage"
+    device_id: ${device_id}
     register_type: holding
     address: 263
     unit_of_measurement: "V"
@@ -326,6 +348,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 3 Voltage"
     id: "${prefix}time_of_use_3_voltage"
+    device_id: ${device_id}
     register_type: holding
     address: 264
     unit_of_measurement: "V"
@@ -343,6 +366,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 4 Voltage"
     id: "${prefix}time_of_use_4_voltage"
+    device_id: ${device_id}
     register_type: holding
     address: 265
     unit_of_measurement: "V"
@@ -360,6 +384,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 5 Voltage"
     id: "${prefix}time_of_use_5_voltage"
+    device_id: ${device_id}
     register_type: holding
     address: 266
     unit_of_measurement: "V"
@@ -377,6 +402,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 6 Voltage"
     id: "${prefix}time_of_use_6_voltage"
+    device_id: ${device_id}
     register_type: holding
     address: 267
     unit_of_measurement: "V"
@@ -394,6 +420,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 1 Out Power"
     id: "${prefix}time_of_use_1_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     address: 256
@@ -406,6 +433,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 2 Out Power"
     id: "${prefix}time_of_use_2_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     address: 257
@@ -418,6 +446,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 3 Out Power"
     id: "${prefix}time_of_use_3_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     address: 258
@@ -430,6 +459,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 4 Out Power"
     id: "${prefix}time_of_use_4_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     address: 259
@@ -442,6 +472,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 5 Out Power"
     id: "${prefix}time_of_use_5_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     address: 260
@@ -454,6 +485,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 6 Out Power"
     id: "${prefix}time_of_use_6_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     address: 261
@@ -466,6 +498,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 1 SoC"
     id: "${prefix}time_of_use_1_soc" #id: "${tou_1_soc_id}"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     address: 268
     min_value: 0
@@ -480,6 +513,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 2 SoC"
     id: "${prefix}time_of_use_2_soc"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     address: 269
     min_value: 0
@@ -494,6 +528,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 3 SoC"
     id: "${prefix}time_of_use_3_soc"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     address: 270
     min_value: 0
@@ -508,6 +543,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 4 SoC"
     id: "${prefix}time_of_use_4_soc"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     address: 271
     min_value: 0
@@ -522,6 +558,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 5 SoC"
     id: "${prefix}time_of_use_5_soc"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     address: 272
     min_value: 0
@@ -536,6 +573,7 @@ number:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Time of Use 6 SoC"
     id: "${prefix}time_of_use_6_soc"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     address: 273
     min_value: 0
@@ -549,6 +587,7 @@ number:
     mode: box
     name: "${nameprefix}Time of Use All Voltage"
     id: "${prefix}time_of_use_all_voltage"
+    device_id: ${device_id}
     unit_of_measurement: "V"
     device_class: voltage
     min_value: 0
@@ -583,6 +622,7 @@ number:
     mode: box
     name: "${nameprefix}Time of Use All Out Power"
     id: "${prefix}time_of_use_all_out_power"
+    device_id: ${device_id}
     unit_of_measurement: W
     device_class: power
     min_value: 0
@@ -617,6 +657,7 @@ number:
     mode: box
     name: "${nameprefix}Time of Use All SoC"
     id: "${prefix}time_of_use_all_soc"
+    device_id: ${device_id}
     unit_of_measurement: "%"
     device_class: battery
     min_value: 0

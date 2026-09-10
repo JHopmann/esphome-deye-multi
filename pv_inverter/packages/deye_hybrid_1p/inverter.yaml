@@ -23,6 +23,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}DC Temperature"
     register_type: holding
+    device_id: ${device_id}
     address: 90
     unit_of_measurement: "°C"
     device_class: temperature
@@ -38,6 +39,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}AC Temperature"
     register_type: holding
+    device_id: ${device_id}
     address: 91
     unit_of_measurement: "°C"
     device_class: temperature
@@ -52,6 +54,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output Frequency"
     register_type: holding
+    device_id: ${device_id}
     address: 193
     unit_of_measurement: "Hz"
     device_class: frequency
@@ -65,6 +68,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output L1 Current"
     register_type: holding
+    device_id: ${device_id}
     address: 164
     unit_of_measurement: "A"
     device_class: current
@@ -78,6 +82,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output L2 Current"
     register_type: holding
+    device_id: ${device_id}
     address: 165
     unit_of_measurement: "A"
     device_class: current
@@ -91,6 +96,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output L1 Power"
     register_type: holding
+    device_id: ${device_id}
     address: 173
     unit_of_measurement: "W"
     device_class: power
@@ -103,6 +109,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output L2 Power"
     register_type: holding
+    device_id: ${device_id}
     address: 174
     unit_of_measurement: "W"
     device_class: power
@@ -116,6 +123,7 @@ sensor:
     name: "${nameprefix}Output Power"
     id: "${prefix}output_power"
     register_type: holding
+    device_id: ${device_id}
     address: 175
     unit_of_measurement: "W"
     device_class: power
@@ -128,6 +136,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output L1 Voltage"
     register_type: holding
+    device_id: ${device_id}
     address: 154
     unit_of_measurement: "V"
     device_class: voltage
@@ -141,6 +150,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Output L2 Voltage"
     register_type: holding
+    device_id: ${device_id}
     address: 155
     unit_of_measurement: "V"
     device_class: voltage

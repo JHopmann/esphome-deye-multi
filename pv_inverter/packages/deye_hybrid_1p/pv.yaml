@@ -24,6 +24,7 @@ sensor:
     name: "${nameprefix}PV1 Power"
     id: "${prefix}pv1_power"
     register_type: holding
+    device_id: ${device_id}
     address: 186
     unit_of_measurement: "W"
     device_class: power
@@ -37,6 +38,7 @@ sensor:
     name: "${nameprefix}PV2 Power"
     id: "${prefix}pv2_power"
     register_type: holding
+    device_id: ${device_id}
     address: 187
     unit_of_measurement: "W"
     device_class: power
@@ -50,6 +52,7 @@ sensor:
     name: "${nameprefix}PV3 Power"
     id: "${prefix}pv3_power"
     register_type: holding
+    device_id: ${device_id}
     address: 188
     unit_of_measurement: "W"
     device_class: power
@@ -63,6 +66,7 @@ sensor:
     name: "${nameprefix}PV4 Power"
     id: "${prefix}pv4_power"
     register_type: holding
+    device_id: ${device_id}
     address: 189
     unit_of_measurement: "W"
     device_class: power
@@ -75,6 +79,7 @@ sensor:
     name: "${nameprefix}PV Power"
     unit_of_measurement: "W"
     id: "${prefix}pv_power"
+    device_id: ${device_id}
     device_class: power
     state_class: "measurement"
     accuracy_decimals: 0
@@ -91,6 +96,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV1 Voltage"
     register_type: holding
+    device_id: ${device_id}
     address: 109
     unit_of_measurement: "V"
     device_class: voltage
@@ -104,6 +110,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV1 Current"
     register_type: holding
+    device_id: ${device_id}
     address: 110
     unit_of_measurement: "A"
     device_class: current
@@ -117,6 +124,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV2 Voltage"
     register_type: holding
+    device_id: ${device_id}
     address: 111
     unit_of_measurement: "V"
     device_class: voltage
@@ -130,6 +138,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV2 Current"
     register_type: holding
+    device_id: ${device_id}
     address: 112
     unit_of_measurement: "A"
     device_class: current
@@ -143,6 +152,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV3 Voltage"
     register_type: holding
+    device_id: ${device_id}
     address: 113
     unit_of_measurement: "V"
     device_class: voltage
@@ -156,6 +166,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV3 Current"
     register_type: holding
+    device_id: ${device_id}
     address: 114
     unit_of_measurement: "A"
     device_class: current
@@ -169,6 +180,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV4 Voltage"
     register_type: holding
+    device_id: ${device_id}
     address: 115
     unit_of_measurement: "V"
     device_class: voltage
@@ -182,6 +194,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}PV4 Current"
     register_type: holding
+    device_id: ${device_id}
     address: 116
     unit_of_measurement: "A"
     device_class: current
@@ -196,6 +209,7 @@ sensor:
     name: "${nameprefix}Daily PV Production"
     id: "${prefix}daily_pv_production"
     register_type: holding
+    device_id: ${device_id}
     address: 108
     unit_of_measurement: "kWh"
     device_class: energy
