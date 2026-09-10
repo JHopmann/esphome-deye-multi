@@ -23,7 +23,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Daily Battery Charge"
     id: "${prefix}daily_battery_charge"
-    #device_id: ${device_id}
+    device_id: ${device_id}
     register_type: holding
     address: 70
     unit_of_measurement: "kWh"
