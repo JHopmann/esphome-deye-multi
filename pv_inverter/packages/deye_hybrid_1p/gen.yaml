@@ -23,6 +23,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Daily Generator Production"
     id: "${prefix}daily_generator_production"
+	device_id: ${device_id}
     register_type: holding
     address: 62
     unit_of_measurement: "kWh"
@@ -38,6 +39,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Total Generator Production"
     id: "${prefix}total_generator_production"
+	device_id: ${device_id}
     register_type: holding
     address: 92
     unit_of_measurement: "kWh"
@@ -53,6 +55,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator L1 Voltage"
     id: "${prefix}generator_l1_voltage"
+	device_id: ${device_id}
     register_type: holding
     address: 181
     unit_of_measurement: "V"
@@ -66,6 +69,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator Frequency"
+	device_id: ${device_id}
     register_type: holding
     address: 196
     unit_of_measurement: "Hz"
@@ -80,6 +84,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator Power Total"
     id: "${prefix}generator_power_total"
+	device_id: ${device_id}
     register_type: holding
     address: 166
     unit_of_measurement: "W"
@@ -94,6 +99,7 @@ binary_sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator Connected Status"
     id: "${prefix}generator_connected_status"
+	device_id: ${device_id}
     register_type: holding
     address: 195
     device_class: running
@@ -119,6 +125,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator"
     id: "${prefix}switch_generator"
+	device_id: ${device_id}
     register_type: holding
     address: 234
     bitmask: 1
@@ -130,6 +137,7 @@ number:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}SmartLoad Off Voltage"
+	device_id: ${device_id}
     address: 236
     unit_of_measurement: "V"
     device_class: voltage
@@ -146,6 +154,7 @@ number:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}SmartLoad Off SOC"
+	device_id: ${device_id}
     address: 237
     unit_of_measurement: "%"
     value_type: U_WORD
@@ -160,6 +169,7 @@ number:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}SmartLoad On Voltage"
+	device_id: ${device_id}
     address: 238
     unit_of_measurement: "V"
     device_class: voltage
@@ -176,6 +186,7 @@ number:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}SmartLoad On SOC"
+	device_id: ${device_id}
     address: 239
     unit_of_measurement: "%"
     value_type: U_WORD
@@ -194,6 +205,7 @@ number:
     unit_of_measurement: "h"
     device_class: duration
     entity_category: config
+	device_id: ${device_id}
     register_type: holding
     min_value: 0
     max_value: 24
@@ -211,6 +223,7 @@ number:
     unit_of_measurement: "h"
     device_class: duration
     entity_category: config
+	device_id: ${device_id}
     register_type: holding
     min_value: 0
     max_value: 24
@@ -228,6 +241,7 @@ number:
     unit_of_measurement: "W"
     device_class: power
     entity_category: config
+	device_id: ${device_id}
     register_type: holding
     min_value: 0
     max_value: 8000

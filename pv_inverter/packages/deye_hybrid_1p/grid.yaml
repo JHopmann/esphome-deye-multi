@@ -30,6 +30,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid L1 Power"
+	device_id: ${device_id}
     register_type: holding
     address: 167
     unit_of_measurement: "W"
@@ -42,6 +43,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid L2 Power"
+	device_id: ${device_id}
     register_type: holding
     address: 168
     unit_of_measurement: "W"
@@ -54,6 +56,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid Power"
+	device_id: ${device_id}
     register_type: holding
     address: 169
     unit_of_measurement: "W"
@@ -66,6 +69,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid Frequency"
+	device_id: ${device_id}
     register_type: holding
     address: 79
     unit_of_measurement: "Hz"
@@ -80,6 +84,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid L1 Voltage"
     id: "${prefix}grid_voltage_l1"
+	device_id: ${device_id}
     register_type: holding
     address: 150
     unit_of_measurement: "V"
@@ -94,6 +99,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid L2 Voltage"
     id: "${prefix}grid_voltage_l2"
+	device_id: ${device_id}
     register_type: holding
     address: 151
     unit_of_measurement: "V"
@@ -108,6 +114,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid Voltage"
     id: "${prefix}grid_voltage"
+	device_id: ${device_id}
     register_type: holding
     address: 152
     unit_of_measurement: "V"
@@ -122,6 +129,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Daily Energy Bought"
     id: "${prefix}daily_energy_bought"
+	device_id: ${device_id}
     register_type: holding
     address: 76
     unit_of_measurement: "kWh"
@@ -137,6 +145,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Daily Energy Sold"
     id: "${prefix}daily_energy_sold"
+	device_id: ${device_id}
     register_type: holding
     address: 77
     unit_of_measurement: "kWh"
@@ -153,6 +162,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     id: "${prefix}total_energy_bought_low_bytes"
     address: 78
+	device_id: ${device_id}
     register_type: holding
     value_type: U_WORD
     internal: true
@@ -161,6 +171,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     id: "${prefix}total_energy_bought_high_bytes"
     address: 80
+	device_id: ${device_id}
     register_type: holding
     value_type: U_WORD
     internal: true
@@ -169,6 +180,7 @@ sensor:
   - platform: template
     name: "${nameprefix}Total Energy Bought"
     id: "${prefix}total_energy_bought"
+	device_id: ${device_id}
     unit_of_measurement: "kWh"
     device_class: energy
     state_class: "total_increasing"
@@ -198,6 +210,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Total Energy Sold"
     id: "${prefix}total_energy_sold"
+	device_id: ${device_id}
     register_type: holding
     address: 81
     unit_of_measurement: "kWh"
@@ -212,6 +225,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}External CT L1 Power"
+	device_id: ${device_id}
     register_type: holding
     address: 170
     unit_of_measurement: "W"
@@ -223,6 +237,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}External CT L2 Power"
+	device_id: ${device_id}
     register_type: holding
     address: 171
     unit_of_measurement: "W"
@@ -234,6 +249,7 @@ sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}External CT Power"
+	device_id: ${device_id}
     register_type: holding
     address: 172
     unit_of_measurement: "W"
@@ -246,6 +262,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}External CT L1 Current"
     id: "${prefix}external_ct_l1_current"
+	device_id: ${device_id}
     register_type: holding
     address: 162
     unit_of_measurement: "A"
@@ -260,6 +277,7 @@ sensor:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}External CT L2 Current"
     id: "${prefix}external_ct_l2_current"
+	device_id: ${device_id}
     register_type: holding
     address: 163
     unit_of_measurement: "A"
@@ -275,6 +293,7 @@ select:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Grid Frequency"
+	device_id: ${device_id}
     address: 285
     value_type: U_WORD
     entity_category: config
@@ -287,6 +306,7 @@ select:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Charging Signal"
+	device_id: ${device_id}
     address: 242
     value_type: U_WORD
     entity_category: config
@@ -303,6 +323,7 @@ switch:
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Force Off Grid"
     id: "${prefix}switch_off_grid"
+	device_id: ${device_id}
     register_type: holding
     address: 281
     bitmask: 1
@@ -313,6 +334,7 @@ switch:
     use_write_multiple: true
     modbus_controller_id: ${modbus_controller_id}
     name: "${nameprefix}Generator Grid Side"
+	device_id: ${device_id}
     register_type: holding
     address: 280
     bitmask: 12
@@ -328,6 +350,7 @@ number:
     unit_of_measurement: "V"
     device_class: voltage
     entity_category: config
+	device_id: ${device_id}
     register_type: holding    
     min_value: 100
     max_value: 290
@@ -346,6 +369,7 @@ number:
     unit_of_measurement: "V"
     device_class: voltage
     entity_category: config
+	device_id: ${device_id}
     register_type: holding
     min_value: 100
     max_value: 290
@@ -364,6 +388,7 @@ number:
     unit_of_measurement: "Hz"
     device_class: frequency
     entity_category: config
+	device_id: ${device_id}
     register_type: holding
     min_value: 45
     max_value: 65
@@ -382,6 +407,7 @@ number:
     unit_of_measurement: "Hz"
     device_class: frequency
     entity_category: config
+	device_id: ${device_id}
     register_type: holding
     min_value: 45
     max_value: 65
