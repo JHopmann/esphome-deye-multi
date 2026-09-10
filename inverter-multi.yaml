@@ -36,13 +36,6 @@ substitutions:
 # one or multiple inverters to your ESP   #
 ###########################################
 
-esphome:
-  name: "deye-inverter"
-  friendly_name: "DEYE Multiple Inverter"
-  comment: "${device_description} by JHopmann https://github.com/JHopmann/esphome-deye-multi/"
-  project:
-    name: "JHopmann.deye-inverter-multi"
-    version: "0.1.3"
 
 packages:
     # 1. MASTER-INVERTER
