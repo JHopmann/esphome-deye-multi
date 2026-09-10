@@ -52,14 +52,6 @@ api:
   on_client_connected:
     - logger.log: "Connection to HomeAssistant API restored"
 
-wifi:
-  ssid: ${wifi_ssid}
-  password: ${wifi_password}
-  use_address: ${hostname}
-  ap:
-    ssid: "${friendly_name} Fallback Hotspot"
-    password: ${fallback_password}
-
 # ============ WEB-SERVER ============
 web_server:
   port: 80
