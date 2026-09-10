@@ -24,6 +24,19 @@ substitutions:
   uart_rx_pin_slave: "GPIO04"
   uart_flow_control_pin_slave: "GPIO16"
 
+esphome:
+  name: "deye-inverter"
+  friendly_name: "DEYE Multiple Inverter"
+  comment: "${device_description} by JHopmann https://github.com/JHopmann/esphome-deye-multi/"
+  project:
+    name: "JHopmann.deye-inverter-multi"
+    version: "0.1.3"
+  devices:
+	- id: master_device
+	  name: master_device
+	- id: slave_device
+	  name: slave_device
+
 modbus:
   - id: modbus_1
     uart_id: modbus_uart_1
