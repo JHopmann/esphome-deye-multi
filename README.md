@@ -28,6 +28,7 @@ Installation & Presentation: https://youtu.be/iJjsA_MzmnE
 
 In this project you will find all ESP-related sensors at the top-level, 
 the devices itself are shown seperate in Home Assistant:
+
 <img src="./docs/images/Devices.jpg" alt="HA devices" width="250" />
 
 The entities have a prefix of your choice. Default is "Master ..."/"Slave ...."
