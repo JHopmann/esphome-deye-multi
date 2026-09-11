@@ -26,10 +26,11 @@ An ESPHome-based solution for monitoring and controlling Deye photovoltaic inver
 For an excellent overview of the features and installation watch the video from the author of the original project (Lewa-Reka)
 Installation & Presentation: https://youtu.be/iJjsA_MzmnE 
 
-In this project you will find all ESP-related sensors at the top-level, the devices are visible as seperate devices in Home Assistant:
+In this project you will find all ESP-related sensors at the top-level, 
+the devices itself are shown seperate in Home Assistant:
 <img src="./docs/images/Devices.jpg" alt="HA devices" width="250" />
 
-The entities have aprefix of your choice. Default is "Master ..."/"Slave ...."
+The entities have a prefix of your choice. Default is "Master ..."/"Slave ...."
 
 ## Hardware
 
